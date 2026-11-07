@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>김태하 가치평가 실습실</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* 포트폴리오 발표 자료와 같은 남색·종이색·주황 계열. 왼쪽 입력, 오른쪽 결과의 작업대 배치. */
+:root {
+  --bg: #F6F4EF; --surface: #FDFCF9; --surface-2: #EDE9E1; --line: #E2DFD8; --line-2: #D3CEC4;
+  --ink: #15233B; --text: #3E4757; --muted: #737B8A; --accent: #C85A1E; --accent-soft: #E9A56F;
+  --navy: #15233B; --navy-2: #22324F; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+  --good: #2E7D5B; --warn: #A86B12; --bad: #B83A3A; --info: #3B6EA8;
+  --good-bg: #E3F0E9; --warn-bg: #F6ECD9; --bad-bg: #F6E1DF; --info-bg: #E2EAF4;
+  --c1: #15233B; --c2: #D9692B; --c3: #5B7DB1; --c4: #3A8F85; --c5: #A0A7B4; --c6: #B24C63;
+  --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --radius: 14px; --head-h: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1626; --surface: #15203A; --surface-2: #1B2945; --line: #283756; --line-2: #34466A;
+    --ink: #EEF1F6; --text: #C9D1DD; --muted: #8F9AAE; --accent: #EE8E52; --accent-soft: #F2B482;
+    --navy: #22324F; --navy-2: #2B3E61; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+    --good: #5BBF92; --warn: #E0AE4F; --bad: #EC7B74; --info: #7AA7DC;
+    --good-bg: #173328; --warn-bg: #36290F; --bad-bg: #3A1D1F; --info-bg: #182B45;
+    --c1: #DCE3EE; --c2: #EE8E52; --c3: #7FA2D8; --c4: #5DBBAE; --c5: #6F7B91; --c6: #E07A93;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1626; --surface: #15203A; --surface-2: #1B2945; --line: #283756; --line-2: #34466A;
+  --ink: #EEF1F6; --text: #C9D1DD; --muted: #8F9AAE; --accent: #EE8E52; --accent-soft: #F2B482;
+  --navy: #22324F; --navy-2: #2B3E61; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+  --good: #5BBF92; --warn: #E0AE4F; --bad: #EC7B74; --info: #7AA7DC;
+  --good-bg: #173328; --warn-bg: #36290F; --bad-bg: #3A1D1F; --info-bg: #182B45;
+  --c1: #DCE3EE; --c2: #EE8E52; --c3: #7FA2D8; --c4: #5DBBAE; --c5: #6F7B91; --c6: #E07A93;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+h1, h2, h3, h4 { color: var(--ink); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* 머리 띠 */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--navy); color: var(--on-navy); }
+.top .wrap { display: flex; align-items: center; gap: 20px; min-height: var(--head-h); }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--on-navy); white-space: nowrap; }
+.brand-mark { width: 22px; height: 5px; background: #D9692B; align-self: center; }
+.brand-name { font-weight: 900; font-size: 17px; }
+.brand-sub { font-size: 13px; color: var(--on-navy-muted); }
+.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin-left: auto; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { background: none; border: 0; color: var(--on-navy-muted); padding: 20px 12px 18px; font-size: 14px; font-weight: 500;
+  border-bottom: 3px solid transparent; cursor: pointer; white-space: nowrap; }
+.tab:hover { color: var(--on-navy); }
+.tab[aria-selected="true"] { color: var(--on-navy); border-bottom-color: #D9692B; font-weight: 700; }
+
+/* 쪽 머리 */
+main { padding-block: 28px 64px; }
+.page-head { display: grid; gap: 6px; margin-bottom: 22px; max-width: 900px; }
+.eyebrow { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; }
+.page-head h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 900; line-height: 1.25; }
+.lead { font-size: 15.5px; color: var(--text); max-width: 70ch; }
+
+/* 작업대: 왼쪽 입력, 오른쪽 결과 */
+.work { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 22px; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 16px 14px;
+  position: sticky; top: calc(var(--head-h) + 16px + env(safe-area-inset-top, 0px)); max-height: calc(100vh - var(--head-h) - 32px); overflow: auto; }
+.results { display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 960px) {
+  .work { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: static; max-height: none; }
+}
+
+/* 입력 */
+.group { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 12px 0 4px; display: grid; gap: 10px; min-width: 0; }
+.group:first-child { border-top: 0; }
+.group > legend { float: left; width: 100%; padding: 0; margin-bottom: 2px; font-size: 12.5px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; }
+.ctl { display: grid; gap: 3px; }
+.ctl label { font-size: 13.5px; color: var(--ink); font-weight: 500; display: flex; justify-content: space-between; gap: 8px; }
+.ctl .hint { font-size: 12px; color: var(--muted); font-weight: 400; text-align: right; }
+.ctl-row { display: grid; grid-template-columns: minmax(0, 1fr) 92px auto; gap: 8px; align-items: center; }
+.ctl-row .unit { font-size: 12.5px; color: var(--muted); min-width: 22px; }
+input[type="range"] { width: 100%; accent-color: var(--accent); min-width: 0; }
+input[type="number"], input[type="date"], select { width: 100%; min-width: 0; background: var(--bg); border: 1px solid var(--line-2); border-radius: 8px;
+  padding: 4px 8px; font-family: var(--mono); font-size: 13.5px; text-align: right; }
+input[type="date"], select { text-align: left; font-family: var(--sans); }
+.switch { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink); cursor: pointer; }
+.switch input { width: 16px; height: 16px; accent-color: var(--accent); flex: none; margin-top: 3px; }
+.ctl label.switch { justify-content: flex-start; align-items: flex-start; line-height: 1.45; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1px solid var(--line-2); background: var(--bg); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.subtle { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.btn { border: 1px solid var(--line-2); background: var(--surface); border-radius: 8px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+
+/* 숫자 카드 */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 2px; align-content: start; min-width: 0; }
+.kpi-label { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.kpi-value { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 600; color: var(--ink); line-height: 1.25; overflow-wrap: anywhere; }
+.kpi-value .u { font-family: var(--sans); font-size: 13px; color: var(--muted); font-weight: 500; margin-left: 3px; }
+.kpi-sub { font-size: 12.5px; color: var(--text); }
+.kpi.main { background: var(--navy); border-color: var(--navy); }
+.kpi.main .kpi-label, .kpi.main .kpi-sub { color: var(--on-navy-muted); }
+.kpi.main .kpi-value { color: #F2B482; font-size: 28px; }
+.kpi.main .kpi-value .u { color: var(--on-navy-muted); }
+.up { color: var(--good); } .down { color: var(--bad); }
+.kpi.main .up { color: #8FE0B8; } .kpi.main .down { color: #FFB3AC; }
+
+/* 카드 */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; min-width: 0; }
+.card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+.card-head h3 { font-size: 16px; font-weight: 700; }
+.card-head .subtle { max-width: 60ch; }
+.chart { width: 100%; height: 320px; }
+.chart.tall { height: 380px; }
+.chart.short { height: 260px; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 1100px) { .two { grid-template-columns: minmax(0, 1fr); } }
+
+/* 검토 의견 */
+.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); }
+.note b { color: var(--ink); font-weight: 700; }
+.note p { font-size: 13.5px; margin-top: 2px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
+.chip.good { color: var(--good); background: var(--good-bg); }
+.chip.warn { color: var(--warn); background: var(--warn-bg); }
+.chip.bad { color: var(--bad); background: var(--bad-bg); }
+.chip.info { color: var(--info); background: var(--info-bg); }
+.chip.muted { color: var(--muted); background: var(--surface); border: 1px solid var(--line); }
+
+/* 표 */
+.tbl-wrap { overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.tbl th { text-align: right; font-weight: 700; color: var(--muted); font-size: 12.5px; padding: 6px 8px; border-bottom: 1px solid var(--line-2); white-space: nowrap; }
+.tbl td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; font-family: var(--sans); }
+.tbl td.txt { font-family: var(--sans); text-align: left; white-space: normal; }
+.tbl tr.sum td { font-weight: 600; color: var(--ink); }
+.tbl tr.flag td { background: var(--bad-bg); }
+.tbl tr.flag-warn td { background: var(--warn-bg); }
+.tbl tr.pick td { outline: 2px solid var(--accent); outline-offset: -2px; }
+.tbl tbody tr.click { cursor: pointer; }
+.tbl tbody tr.click:hover td { background: var(--surface-2); }
+
+/* 소개 */
+.hero { display: grid; gap: 14px; padding: 18px 0 8px; max-width: 980px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.15; }
+.hero .lead { font-size: 17px; }
+.hero-bar { width: 72px; height: 6px; background: #D9692B; }
+.duties { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 18px; }
+.duty { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 8px; align-content: start; text-decoration: none; color: inherit; }
+.duty:hover { border-color: var(--accent); }
+.duty .tag { font-size: 12.5px; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
+.duty h3 { font-size: 18px; font-weight: 700; }
+.duty p { font-size: 14px; }
+.duty .go { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+.duty.dark { background: var(--navy); border-color: var(--navy); }
+.duty.dark h3, .duty.dark .go { color: var(--on-navy); }
+.duty.dark p { color: var(--on-navy-muted); }
+.duty.dark .tag { color: #F2B482; }
+.strip { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; background: var(--surface-2); border-radius: var(--radius); padding: 16px 20px; margin-top: 18px; }
+.strip .big { font-family: var(--mono); font-size: 30px; font-weight: 600; color: var(--ink); }
+@media (max-width: 640px) { .strip { grid-template-columns: minmax(0, 1fr); } }
+.how { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
+.how .card h3 { font-size: 15px; margin-bottom: 6px; }
+.how .card p { font-size: 14px; }
+
+.code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); border-radius: 10px; padding: 12px 14px; overflow-x: auto; white-space: pre; color: var(--ink); }
+.callout { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: 14px; }
+.callout b { color: var(--ink); }
+.foot { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot .mono { user-select: all; }
+.loading { color: var(--muted); font-size: 14px; padding: 30px 0; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
+.legend-row i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><span class="brand-mark"></span><span class="brand-name">김태하</span><span class="brand-sub">가치평가 실습실</span></a>
+    <nav class="tabs" role="tablist" aria-label="화면">
+      <button class="tab" role="tab" data-tab="home">소개</button>
+      <button class="tab" role="tab" data-tab="cb">복합금융상품</button>
+      <button class="tab" role="tab" data-tab="sha">주주간 계약</button>
+      <button class="tab" role="tab" data-tab="dcf">DCF</button>
+      <button class="tab" role="tab" data-tab="deriv">파생상품</button>
+      <button class="tab" role="tab" data-tab="xbrl">XBRL</button>
+      <button class="tab" role="tab" data-tab="bt">자동매매 백테스트</button>
+      <button class="tab" role="tab" data-tab="verify">검증</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 소개 -->
+<section class="page" data-page="home">
+  <div class="hero">
+    <div class="hero-bar"></div>
+    <p class="eyebrow">면접 시연 자료 · 2026년 11월</p>
+    <h1>가치평가 실습실</h1>
+    <p class="lead">가치평가 직무의 주요 업무 네 가지를 직접 계산해 볼 수 있게 만들었습니다. 왼쪽 입력값을 바꾸면 오른쪽 결과가 바로 다시 계산됩니다.</p>
+  </div>
+  <div class="duties">
+    <a class="duty" href="#cb"><span class="tag">외부평가 보고서 리뷰</span><h3>상환전환우선주·전환사채</h3>
+      <p>이항모형으로 공정가치를 다시 계산합니다. 평가인이 보고한 값을 맞추려면 변동성이나 신용스프레드가 얼마여야 하는지 역산해 차이의 원인을 좁힙니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#sha"><span class="tag">외부평가 보고서 리뷰</span><h3>주주간 계약 풋옵션·콜옵션</h3>
+      <p>투자자 풋옵션과 최대주주 콜옵션을 최소제곱 몬테카를로로 평가합니다. 상장 확률과 의무자 신용위험이 가치를 얼마나 바꾸는지 봅니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#dcf"><span class="tag">DCF 평가</span><h3>현금흐름할인법</h3>
+      <p>가중평균자본비용을 쌓아 5년 현금흐름과 영구가치로 주당 가치를 냅니다. 영구가치 비중, 재투자 일관성, 비교회사 배수를 자동으로 점검합니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#deriv"><span class="tag">파생상품 평가</span><h3>할인곡선·스왑·통화선도·통화옵션</h3>
+      <p>CD금리와 스왑금리로 할인곡선을 만들어 장외파생상품을 평가하고, 거래상대방·자기 신용위험 조정을 반영합니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#xbrl"><span class="tag">XBRL 작성 및 리뷰</span><h3>XBRL 사실값 검토</h3>
+      <p>계산 관계, 재무제표 간 연계, 중복값, 전기 금액, 요소 선택 규칙으로 사실값을 검사합니다. 흔한 입력 오류를 직접 넣어 볼 수 있습니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty dark" href="#bt"><span class="tag">포트폴리오</span><h3>비트코인 자동매매 백테스트</h3>
+      <p>실거래했던 봇의 규칙 그대로 가상 매매합니다. 서버 없이 브라우저에서 돌도록 옮겼고, 파이썬 엔진과 거래 하나하나가 같은지 대조했습니다.</p><span class="go">열어 보기 →</span></a>
+  </div>
+  <div class="strip">
+    <div class="big" id="home-verify-count">—</div>
+    <p>모든 계산을 파이썬으로 따로 구현해 같은 입력에서 같은 값이 나오는지 대조했고, 교과서 예제·닫힌 해·항등식으로도 확인했습니다.</p>
+    <a class="btn" href="#verify">검증 기록 보기</a>
+  </div>
+  <div class="how">
+    <div class="card"><h3>계산 일치</h3><p>자동매매 프로젝트에서 실거래 봇과 시뮬레이터의 계산을 똑같이 맞췄던 원칙을 그대로 썼습니다. 화면 계산과 파이썬 기준 구현이 같은 값을 내야 공개했습니다.</p></div>
+    <div class="card"><h3>AI 활용과 직접 검증</h3><p>AI 에이전트로 짧은 시간에 만들고, 숫자는 헐 교재 예제와 블랙-숄즈 닫힌 해, 공정금리 스왑 가치 0 같은 항등식으로 하나씩 확인했습니다.</p></div>
+    <div class="card"><h3>예시 값 안내</h3><p>평가 사례의 회사·금리·환율·평가인 보고값은 모두 설명용으로 만든 가상 값입니다. 실제 회사나 시장 자료가 아닙니다.</p></div>
+  </div>
+</section>
+
+<!-- 복합금융상품 -->
+<section class="page" data-page="cb" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 1 · 외부평가 보고서 리뷰</p>
+    <h2>상환전환우선주·전환사채 재계산</h2>
+    <p class="lead">평가인이 쓴 가정을 그대로 넣어 공정가치를 다시 계산합니다. 보고값과 차이가 나면 어떤 가정이 그 차이를 설명하는지 역산합니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="cb-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="cb-kpis"></div>
+      <div class="card" id="cb-implied"></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>주가에 따른 공정가치</h3><span class="subtle">주가가 낮으면 채권처럼, 높으면 주식처럼 움직입니다</span></div><div class="chart" id="cb-profile"></div></div>
+        <div class="card"><div class="card-head"><h3>민감도</h3><span class="subtle">입력 하나만 바꿨을 때 공정가치</span></div><div class="chart" id="cb-tornado"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>행사 영역 지도</h3><span class="subtle">이항 격자의 각 지점에서 보유자가 고르는 선택. 가로 기간, 세로 주가</span></div><div class="chart tall" id="cb-map"></div></div>
+      <div class="card"><div class="card-head"><h3>리뷰 체크리스트</h3><span class="subtle">숫자로 확인되는 항목은 자동 판정, 나머지는 보고서에서 확인할 질문</span></div><ul class="notes" id="cb-check"></ul></div>
+      <div class="card"><div class="card-head"><h3>계산 방식</h3></div>
+        <p class="subtle" id="cb-method"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 주주간 계약 -->
+<section class="page" data-page="sha" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 1 · 외부평가 보고서 리뷰</p>
+    <h2>주주간 계약 풋옵션·콜옵션</h2>
+    <p class="lead">재무적 투자자가 상장 실패에 대비해 받은 풋옵션과 최대주주가 가진 콜옵션을 평가합니다. 행사 기간 중 매달 행사할 수 있는 조건을 최소제곱 몬테카를로로 반영합니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="sha-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="sha-kpis"></div>
+      <div class="card"><div class="card-head"><h3>주당 가치 경로와 행사가격</h3><span class="subtle">모의 경로의 5·25·50·75·95% 구간. 점선은 보장수익률로 불어나는 행사가격</span></div><div class="chart tall" id="sha-fan"></div></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>행사 시점</h3><span class="subtle">행사한 경로 수, 평가일로부터 연차별</span></div><div class="chart short" id="sha-when"></div></div>
+        <div class="card"><div class="card-head"><h3>계산 정밀도</h3></div><div id="sha-precision"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>회계 처리 메모</h3></div><ul class="notes" id="sha-acct"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DCF -->
+<section class="page" data-page="dcf" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 2 · DCF 평가</p>
+    <h2>현금흐름할인법 평가</h2>
+    <p class="lead">5년 추정 현금흐름과 영구가치로 기업가치를 구하고, 비영업자산과 순차입금을 반영해 주당 가치를 냅니다. 검토자가 먼저 묻는 항목은 자동으로 표시됩니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="dcf-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="dcf-kpis"></div>
+      <div class="card"><div class="card-head"><h3>자동 검토 의견</h3></div><ul class="notes" id="dcf-flags"></ul></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>가치 구성</h3><span class="subtle">억원</span></div><div class="chart" id="dcf-bridge"></div></div>
+        <div class="card"><div class="card-head"><h3>주당 가치 민감도</h3><span class="subtle">할인율 × 영구성장률, 원</span></div><div class="chart" id="dcf-heat"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>추정 현금흐름</h3><span class="subtle">억원</span></div><div class="tbl-wrap" id="dcf-table"></div></div>
+      <div class="card"><div class="card-head"><h3>할인율 산정</h3></div><div class="tbl-wrap" id="dcf-wacc"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 파생상품 -->
+<section class="page" data-page="deriv" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 3 · 파생상품 평가</p>
+    <h2>할인곡선과 장외파생상품</h2>
+    <p class="lead">CD 91일물과 이자율스왑 금리로 할인곡선을 만들고 이자율스왑, 통화선도, 통화옵션을 평가합니다. 공정가치에 들어가는 신용위험 조정은 현금흐름 방향에 따라 다른 스프레드로 할인하는 간편법으로 반영합니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="deriv-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="deriv-kpis"></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>할인곡선</h3><span class="subtle">점: 시장 스왑금리, 선: 무이표 금리와 3개월 선도금리</span></div><div class="chart" id="deriv-curve"></div></div>
+        <div class="card"><div class="card-head"><h3 id="deriv-chart2-title">현금흐름</h3><span class="subtle" id="deriv-chart2-sub"></span></div><div class="chart" id="deriv-chart2"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3 id="deriv-detail-title">세부 내역</h3></div><div class="tbl-wrap" id="deriv-detail"></div></div>
+      <div class="card"><div class="card-head"><h3>검토 포인트</h3></div><ul class="notes" id="deriv-notes"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- XBRL -->
+<section class="page" data-page="xbrl" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 4 · XBRL 작성 및 리뷰</p>
+    <h2>XBRL 사실값 검토</h2>
+    <p class="lead">재무제표를 XBRL 사실값으로 옮길 때 자주 생기는 오류를 골라 넣고, 검사 규칙이 어떻게 잡아내는지 봅니다. 표의 행을 누르면 그 사실값의 XBRL 표현이 나옵니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="xbrl-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="xbrl-kpis"></div>
+      <div class="card"><div class="card-head"><h3>검사 결과</h3><span class="subtle">규칙 8가지: 계산 관계 · 부호 · 단위·정밀도 · 기간 맥락 · 중복 사실값 · 재무제표 간 연계 · 전기 금액 · 요소 선택</span></div><ul class="notes" id="xbrl-issues"></ul></div>
+      <div class="card"><div class="card-head"><h3>선택한 사실값</h3><span class="subtle" id="xbrl-pick-sub">표에서 행을 누르세요</span></div><div class="code" id="xbrl-xml"></div></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>재무상태표</h3><span class="subtle">백만원</span></div><div class="tbl-wrap" id="xbrl-bs"></div></div>
+        <div class="card"><div class="card-head"><h3>손익계산서 · 현금흐름표</h3><span class="subtle">백만원</span></div><div class="tbl-wrap" id="xbrl-is"></div><div class="tbl-wrap" id="xbrl-cf" style="margin-top:14px"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 백테스트 -->
+<section class="page" data-page="bt" hidden>
+  <div class="page-head">
+    <p class="eyebrow">포트폴리오 · 비트코인 자동매매</p>
+    <h2>ver_4_4 봇 규칙 백테스트</h2>
+    <p class="lead">실거래 봇과 같은 시간 흐름으로 가상 매매합니다. 봉 마감 10초 뒤 판단 → 종가에 지정가 → 다음 봉 안에 체결되지 않으면 취소 → 반대 신호나 기간 만료 때 다음 봉 시가에 청산.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="bt-panel" aria-label="입력"><p class="loading">시세와 모델 확률을 불러오는 중입니다…</p></aside>
+    <div class="results">
+      <div class="card" id="bt-info"></div>
+      <div class="kpis" id="bt-kpis"></div>
+      <div class="card" id="bt-verdict-card" hidden><div class="card-head"><h3>봉인 판정 기준 · 중간 집계</h3><span class="subtle">판정은 주 구간이 끝난 2027-04-23 00:00 이후 한 번만 합니다</span></div><ul class="notes" id="bt-verdict"></ul></div>
+      <div class="card"><div class="card-head"><h3>자산 변화</h3><span class="subtle">거래가 끝날 때마다 계좌가 바뀝니다</span></div><div class="chart short" id="bt-equity"></div></div>
+      <div class="card"><div class="card-head"><h3>가격과 매매</h3><span class="subtle">아래 막대로 기간 확대. 회색 점은 체결되지 않은 신호</span></div><div class="chart tall" id="bt-price"></div></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>매매 일지</h3></div><div class="tbl-wrap" id="bt-trades"></div></div>
+        <div class="card"><div class="card-head"><h3>월별 · 청산 사유</h3></div><div class="tbl-wrap" id="bt-monthly"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>이 화면은 어떻게 계산하나요</h3></div><ul class="notes" id="bt-how"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 검증 -->
+<section class="page" data-page="verify" hidden>
+  <div class="page-head">
+    <p class="eyebrow">검증 기록</p>
+    <h2>계산을 어떻게 확인했나</h2>
+    <p class="lead">화면의 모든 계산을 파이썬으로 따로 구현해 같은 입력에서 같은 값이 나오는지 대조했습니다. 헐 교재 예제, 블랙-숄즈 닫힌 해, 항등식으로도 확인했고, 자동매매 백테스트는 파이썬 대시보드 엔진과 거래 단위로 맞췄습니다.</p>
+  </div>
+  <div class="kpis" id="verify-kpis"></div>
+  <div class="results" id="verify-groups" style="margin-top:18px"></div>
+  <div class="card" style="margin-top:18px"><div class="card-head"><h3>이 브라우저에서 다시 돌리기</h3><span class="subtle">파이썬 없이 이 화면의 계산 모듈만으로 다시 확인합니다</span></div>
+    <button class="btn" id="verify-run">지금 검사</button><ul class="notes" id="verify-live" style="margin-top:12px"></ul></div>
+</section>
+
+<footer class="foot">
+  <span>김태하</span><span class="mono">rlaxogk62@gmail.com</span><span>평가 사례·금리·환율·보고값은 설명용 가상 값입니다.</span><span id="foot-build"></span>
+</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="calc.js"></script>
+<script src="backtest.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
