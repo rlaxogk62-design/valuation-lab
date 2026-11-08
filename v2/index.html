@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>김태하 가치평가 실습실 삼성전자 편</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* 포트폴리오 발표 자료와 같은 남색·종이색·주황 계열. 왼쪽 입력, 오른쪽 결과의 작업대 배치. */
+:root {
+  --bg: #F6F4EF; --surface: #FDFCF9; --surface-2: #EDE9E1; --line: #E2DFD8; --line-2: #D3CEC4;
+  --ink: #15233B; --text: #3E4757; --muted: #737B8A; --accent: #C85A1E; --accent-soft: #E9A56F;
+  --navy: #15233B; --navy-2: #22324F; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+  --good: #2E7D5B; --warn: #A86B12; --bad: #B83A3A; --info: #3B6EA8;
+  --good-bg: #E3F0E9; --warn-bg: #F6ECD9; --bad-bg: #F6E1DF; --info-bg: #E2EAF4;
+  --c1: #15233B; --c2: #D9692B; --c3: #5B7DB1; --c4: #3A8F85; --c5: #A0A7B4; --c6: #B24C63;
+  --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --radius: 14px; --head-h: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1626; --surface: #15203A; --surface-2: #1B2945; --line: #283756; --line-2: #34466A;
+    --ink: #EEF1F6; --text: #C9D1DD; --muted: #8F9AAE; --accent: #EE8E52; --accent-soft: #F2B482;
+    --navy: #22324F; --navy-2: #2B3E61; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+    --good: #5BBF92; --warn: #E0AE4F; --bad: #EC7B74; --info: #7AA7DC;
+    --good-bg: #173328; --warn-bg: #36290F; --bad-bg: #3A1D1F; --info-bg: #182B45;
+    --c1: #DCE3EE; --c2: #EE8E52; --c3: #7FA2D8; --c4: #5DBBAE; --c5: #6F7B91; --c6: #E07A93;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1626; --surface: #15203A; --surface-2: #1B2945; --line: #283756; --line-2: #34466A;
+  --ink: #EEF1F6; --text: #C9D1DD; --muted: #8F9AAE; --accent: #EE8E52; --accent-soft: #F2B482;
+  --navy: #22324F; --navy-2: #2B3E61; --on-navy: #F6F4EF; --on-navy-muted: #B9C2D0;
+  --good: #5BBF92; --warn: #E0AE4F; --bad: #EC7B74; --info: #7AA7DC;
+  --good-bg: #173328; --warn-bg: #36290F; --bad-bg: #3A1D1F; --info-bg: #182B45;
+  --c1: #DCE3EE; --c2: #EE8E52; --c3: #7FA2D8; --c4: #5DBBAE; --c5: #6F7B91; --c6: #E07A93;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+h1, h2, h3, h4 { color: var(--ink); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* 머리 띠 */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--navy); color: var(--on-navy); }
+.top .wrap { display: flex; align-items: center; gap: 20px; min-height: var(--head-h); }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--on-navy); white-space: nowrap; }
+.brand-mark { width: 22px; height: 5px; background: #D9692B; align-self: center; }
+.brand-name { font-weight: 900; font-size: 17px; }
+.brand-sub { font-size: 13px; color: var(--on-navy-muted); }
+.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin-left: auto; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { background: none; border: 0; color: var(--on-navy-muted); padding: 20px 12px 18px; font-size: 14px; font-weight: 500;
+  border-bottom: 3px solid transparent; cursor: pointer; white-space: nowrap; }
+.tab:hover { color: var(--on-navy); }
+.tab[aria-selected="true"] { color: var(--on-navy); border-bottom-color: #D9692B; font-weight: 700; }
+
+/* 쪽 머리 */
+main { padding-block: 28px 64px; }
+.page-head { display: grid; gap: 6px; margin-bottom: 22px; max-width: 900px; }
+.eyebrow { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; }
+.page-head h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 900; line-height: 1.25; }
+.lead { font-size: 15.5px; color: var(--text); max-width: 70ch; }
+
+/* 작업대: 왼쪽 입력, 오른쪽 결과 */
+.work { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 22px; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 16px 14px;
+  position: sticky; top: calc(var(--head-h) + 16px + env(safe-area-inset-top, 0px)); max-height: calc(100vh - var(--head-h) - 32px); overflow: auto; }
+.results { display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 960px) {
+  .work { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: static; max-height: none; }
+}
+
+/* 입력 */
+.group { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 12px 0 4px; display: grid; gap: 10px; min-width: 0; }
+.group:first-child { border-top: 0; }
+.group > legend { float: left; width: 100%; padding: 0; margin-bottom: 2px; font-size: 12.5px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; }
+.ctl { display: grid; gap: 3px; }
+.ctl label { font-size: 13.5px; color: var(--ink); font-weight: 500; display: flex; justify-content: space-between; gap: 8px; }
+.ctl .hint { font-size: 12px; color: var(--muted); font-weight: 400; text-align: right; }
+.ctl-row { display: grid; grid-template-columns: minmax(0, 1fr) 92px auto; gap: 8px; align-items: center; }
+.ctl-row .unit { font-size: 12.5px; color: var(--muted); min-width: 22px; }
+input[type="range"] { width: 100%; accent-color: var(--accent); min-width: 0; }
+input[type="number"], input[type="date"], select { width: 100%; min-width: 0; background: var(--bg); border: 1px solid var(--line-2); border-radius: 8px;
+  padding: 4px 8px; font-family: var(--mono); font-size: 13.5px; text-align: right; }
+input[type="date"], select { text-align: left; font-family: var(--sans); }
+.switch { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink); cursor: pointer; }
+.switch input { width: 16px; height: 16px; accent-color: var(--accent); flex: none; margin-top: 3px; }
+.ctl label.switch { justify-content: flex-start; align-items: flex-start; line-height: 1.45; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1px solid var(--line-2); background: var(--bg); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.subtle { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.btn { border: 1px solid var(--line-2); background: var(--surface); border-radius: 8px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+
+/* 숫자 카드 */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 2px; align-content: start; min-width: 0; }
+.kpi-label { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.kpi-value { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 600; color: var(--ink); line-height: 1.25; overflow-wrap: anywhere; }
+.kpi-value .u { font-family: var(--sans); font-size: 13px; color: var(--muted); font-weight: 500; margin-left: 3px; }
+.kpi-sub { font-size: 12.5px; color: var(--text); }
+.kpi.main { background: var(--navy); border-color: var(--navy); }
+.kpi.main .kpi-label, .kpi.main .kpi-sub { color: var(--on-navy-muted); }
+.kpi.main .kpi-value { color: #F2B482; font-size: 28px; }
+.kpi.main .kpi-value .u { color: var(--on-navy-muted); }
+.up { color: var(--good); } .down { color: var(--bad); }
+.kpi.main .up { color: #8FE0B8; } .kpi.main .down { color: #FFB3AC; }
+
+/* 카드 */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; min-width: 0; }
+.card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+.card-head h3 { font-size: 16px; font-weight: 700; }
+.card-head .subtle { max-width: 60ch; }
+.chart { width: 100%; height: 320px; }
+.chart.tall { height: 380px; }
+.chart.short { height: 260px; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 1100px) { .two { grid-template-columns: minmax(0, 1fr); } }
+
+/* 검토 의견 */
+.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); }
+.note b { color: var(--ink); font-weight: 700; }
+.note p { font-size: 13.5px; margin-top: 2px; }
+.chip { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
+.chip.good { color: var(--good); background: var(--good-bg); }
+.chip.warn { color: var(--warn); background: var(--warn-bg); }
+.chip.bad { color: var(--bad); background: var(--bad-bg); }
+.chip.info { color: var(--info); background: var(--info-bg); }
+.chip.muted { color: var(--muted); background: var(--surface); border: 1px solid var(--line); }
+
+/* 표 */
+.tbl-wrap { overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.tbl th { text-align: right; font-weight: 700; color: var(--muted); font-size: 12.5px; padding: 6px 8px; border-bottom: 1px solid var(--line-2); white-space: nowrap; }
+.tbl td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; font-family: var(--sans); }
+.tbl td.txt { font-family: var(--sans); text-align: left; white-space: normal; }
+.tbl tr.sum td { font-weight: 600; color: var(--ink); }
+.tbl tr.flag td { background: var(--bad-bg); }
+.tbl tr.flag-warn td { background: var(--warn-bg); }
+.tbl tr.pick td { outline: 2px solid var(--accent); outline-offset: -2px; }
+.tbl tbody tr.click { cursor: pointer; }
+.tbl tbody tr.click:hover td { background: var(--surface-2); }
+
+/* 소개 */
+.hero { display: grid; gap: 14px; padding: 18px 0 8px; max-width: 980px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.15; }
+.hero .lead { font-size: 17px; }
+.hero-bar { width: 72px; height: 6px; background: #D9692B; }
+.duties { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 18px; }
+.duty { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 8px; align-content: start; text-decoration: none; color: inherit; }
+.duty:hover { border-color: var(--accent); }
+.duty .tag { font-size: 12.5px; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
+.duty h3 { font-size: 18px; font-weight: 700; }
+.duty p { font-size: 14px; }
+.duty .go { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+.duty.dark { background: var(--navy); border-color: var(--navy); }
+.duty.dark h3, .duty.dark .go { color: var(--on-navy); }
+.duty.dark p { color: var(--on-navy-muted); }
+.duty.dark .tag { color: #F2B482; }
+.strip { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; background: var(--surface-2); border-radius: var(--radius); padding: 16px 20px; margin-top: 18px; }
+.strip .big { font-family: var(--mono); font-size: 30px; font-weight: 600; color: var(--ink); }
+@media (max-width: 640px) { .strip { grid-template-columns: minmax(0, 1fr); } }
+.how { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
+.how .card h3 { font-size: 15px; margin-bottom: 6px; }
+.how .card p { font-size: 14px; }
+
+.code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); border-radius: 10px; padding: 12px 14px; overflow-x: auto; white-space: pre; color: var(--ink); }
+.callout { border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: 14px; }
+.callout b { color: var(--ink); }
+.foot { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot .mono { user-select: all; }
+.loading { color: var(--muted); font-size: 14px; padding: 30px 0; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
+.legend-row i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><span class="brand-mark"></span><span class="brand-name">김태하</span><span class="brand-sub">가치평가 실습실 · 삼성전자 편</span></a>
+    <nav class="tabs" role="tablist" aria-label="화면">
+      <button class="tab" role="tab" data-tab="home">소개</button>
+      <button class="tab" role="tab" data-tab="psu">주식보상</button>
+      <button class="tab" role="tab" data-tab="cb">교환사채</button>
+      <button class="tab" role="tab" data-tab="dcf">DCF</button>
+      <button class="tab" role="tab" data-tab="deriv">파생상품</button>
+      <button class="tab" role="tab" data-tab="xbrl">XBRL</button>
+      <button class="tab" role="tab" data-tab="bt">자동매매 백테스트</button>
+      <button class="tab" role="tab" data-tab="verify">검증</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 소개 -->
+<section class="page" data-page="home">
+  <div class="hero">
+    <div class="hero-bar"></div>
+    <p class="eyebrow">면접 시연 자료 · 2026년 11월 · 2버전</p>
+    <h1>삼성전자로 해 보는 가치평가</h1>
+    <p class="lead">1버전의 계산 도구에 삼성전자의 실제 공시와 시장 자료를 넣었습니다. 사업보고서·반기보고서, 한국은행 금리, 실제 주가를 쓰고, 공시에 없는 계약 조건이나 미래 추정은 가정이라고 표시했습니다.</p>
+  </div>
+  <div class="duties">
+    <a class="duty dark" href="#psu"><span class="tag">외부평가 보고서 리뷰 · 실제 공시</span><h3>성과연동 주식보상 재계산</h3>
+      <p>삼성전자가 주석에 공시한 주식보상 공정가치 51,760원을 공시된 입력값으로 다시 계산합니다. 어떤 가정이어야 공시값이 나오는지 역산해 리뷰 질문을 만듭니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#cb"><span class="tag">복합금융상품 · 실제 시장 자료</span><h3>삼성전자 주식 교환사채</h3>
+      <p>실제 주가·변동성·국고채 금리·신용스프레드로 삼성전자 주식을 교환 대상으로 하는 사채를 이항모형으로 평가합니다. 사채 조건은 가정입니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#dcf"><span class="tag">DCF 평가 · 실제 재무제표</span><h3>삼성전자 현금흐름할인법</h3>
+      <p>2025년 실적과 2026년 상반기 실적에서 출발해 주당 가치를 내고, 지금 주가를 설명하려면 영업이익률이 얼마여야 하는지 거꾸로 계산합니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#deriv"><span class="tag">파생상품 평가 · 실제 금리</span><h3>국고채 곡선과 환헤지 상품</h3>
+      <p>한국은행이 공표한 CD금리·국고채 금리와 원/달러 환율, 미국 국채 금리로 할인곡선을 만들고 스왑·통화선도·통화옵션을 평가합니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#xbrl"><span class="tag">XBRL 작성 및 리뷰 · 실제 재무제표</span><h3>삼성전자 연결재무제표 검사</h3>
+      <p>2025 사업보고서 연결재무제표 78개 사실값을 계산 관계 16개와 재무제표 간 연계로 검사하고, 흔한 입력 오류를 넣어 잡아내는지 봅니다.</p><span class="go">계산해 보기 →</span></a>
+    <a class="duty" href="#bt"><span class="tag">포트폴리오</span><h3>비트코인 자동매매 백테스트</h3>
+      <p>실거래했던 봇의 규칙 그대로 가상 매매합니다. 1버전과 같습니다.</p><span class="go">열어 보기 →</span></a>
+  </div>
+  <div class="strip">
+    <div class="big" id="home-verify-count">—</div>
+    <p>모든 계산을 파이썬으로 따로 구현해 대조했고, 삼성전자 공시값 재현과 실제 재무제표 검산까지 확인했습니다.</p>
+    <a class="btn" href="#verify">검증 기록 보기</a>
+  </div>
+  <div class="card" style="margin-top:18px"><div class="card-head"><h3>자료 출처</h3><span class="subtle" id="home-asof"></span></div><div class="tbl-wrap" id="home-sources"></div></div>
+  <div class="how">
+    <div class="card"><h3>실제와 가정의 구분</h3><p>재무제표·주석·금리·환율·주가는 실제 공표 값입니다. 교환사채·스왑·선도·옵션의 계약 조건, 2027년 이후 실적 추정, 시장위험프리미엄은 가정이며 화면에 표시했습니다.</p></div>
+    <div class="card"><h3>XBRL 요소 이름</h3><p>금액은 공시 그대로이고, 요소 이름은 표준 분류체계에서 고른 대응입니다. 삼성전자가 실제로 쓴 태그는 다트 XBRL 원본으로 확인해야 합니다.</p></div>
+    <div class="card"><h3>1버전</h3><p>가상 사례로 같은 도구를 설명한 1버전은 <a href="../">여기</a>에 그대로 있습니다.</p></div>
+  </div>
+</section>
+
+<!-- 복합금융상품 -->
+<section class="page" data-page="cb" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 1 · 복합금융상품 · 실제 시장 자료와 가정한 사채 조건</p>
+    <h2>삼성전자 주식 교환사채</h2>
+    <p class="lead">삼성전자 주식을 가진 회사가 그 주식으로 교환해 줄 수 있는 사채를 발행했다고 가정했습니다. 주가·변동성·배당·국고채 금리·신용스프레드는 실제 값이고, 교환가격·만기·조기상환 조건은 가정입니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="cb-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="cb-kpis"></div>
+      <div class="card" id="cb-implied"></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>주가에 따른 공정가치</h3><span class="subtle">주가가 낮으면 채권처럼, 높으면 주식처럼 움직입니다</span></div><div class="chart" id="cb-profile"></div></div>
+        <div class="card"><div class="card-head"><h3>민감도</h3><span class="subtle">입력 하나만 바꿨을 때 공정가치</span></div><div class="chart" id="cb-tornado"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>행사 영역 지도</h3><span class="subtle">이항 격자의 각 지점에서 보유자가 고르는 선택. 가로 기간, 세로 주가</span></div><div class="chart tall" id="cb-map"></div></div>
+      <div class="card"><div class="card-head"><h3>리뷰 체크리스트</h3><span class="subtle">숫자로 확인되는 항목은 자동 판정, 나머지는 보고서에서 확인할 질문</span></div><ul class="notes" id="cb-check"></ul></div>
+      <div class="card"><div class="card-head"><h3>계산 방식</h3></div>
+        <p class="subtle" id="cb-method"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 주식보상 -->
+<section class="page" data-page="psu" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 1 · 외부평가 보고서 리뷰 · 실제 공시</p>
+    <h2>삼성전자 성과연동 주식보상 재계산</h2>
+    <p class="lead">삼성전자는 2025년 10월 임직원에게 3년 뒤 주가 상승률에 따라 0~2배의 주식을 주는 보상을 약정하고, 주석에 공정가치와 평가 입력값을 공시했습니다. 공시된 입력값으로 다시 계산해 공시값과 맞는지, 차이가 나면 어떤 가정 때문인지 봅니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="psu-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="psu-kpis"></div>
+      <div class="card" id="psu-review"></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>확정일 주가에 따른 지급 가치</h3><span class="subtle">막대: 위험중립 확률, 선: 1단위가 받는 주식의 가치</span></div><div class="chart" id="psu-payoff"></div></div>
+        <div class="card"><div class="card-head"><h3>이항모형 격자 수와 결과</h3><span class="subtle">지급배수가 계단처럼 바뀌어 격자 수에 따라 값이 출렁입니다</span></div><div class="chart" id="psu-conv"></div></div>
+      </div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>민감도</h3><span class="subtle">입력 하나만 바꿨을 때 1단위 공정가치</span></div><div class="chart" id="psu-tornado"></div></div>
+        <div class="card"><div class="card-head"><h3>지급배수별 확률</h3><span class="subtle">부여일 기준 위험중립 확률</span></div><div class="tbl-wrap" id="psu-probs"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>리뷰 질문과 회계 처리</h3></div><ul class="notes" id="psu-notes"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DCF -->
+<section class="page" data-page="dcf" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 2 · DCF 평가 · 실제 재무제표와 추정 가정</p>
+    <h2>삼성전자 현금흐름할인법</h2>
+    <p class="lead">기준연도는 2025년 실적, 1년차는 2026년 상반기 실적을 연으로 환산한 값에서 출발합니다. 2년차 이후는 반도체 경기 순환을 감안한 가정입니다. 지금 주가를 설명하려면 영업이익률이 얼마여야 하는지도 거꾸로 계산합니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="dcf-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="dcf-kpis"></div>
+      <div class="card" id="dcf-market"></div>
+      <div class="card"><div class="card-head"><h3>자동 검토 의견</h3></div><ul class="notes" id="dcf-flags"></ul></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>가치 구성</h3><span class="subtle">억원</span></div><div class="chart" id="dcf-bridge"></div></div>
+        <div class="card"><div class="card-head"><h3>주당 가치 민감도</h3><span class="subtle">할인율 × 영구성장률, 원</span></div><div class="chart" id="dcf-heat"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>추정 현금흐름</h3><span class="subtle">억원</span></div><div class="tbl-wrap" id="dcf-table"></div></div>
+      <div class="card"><div class="card-head"><h3>할인율 산정</h3></div><div class="tbl-wrap" id="dcf-wacc"></div></div>
+      <div class="card"><div class="card-head"><h3>기준값과 출처</h3></div><div class="tbl-wrap" id="dcf-src"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 파생상품 -->
+<section class="page" data-page="deriv" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 3 · 파생상품 평가</p>
+    <h2>할인곡선과 장외파생상품</h2>
+    <p class="lead">한국은행이 공표한 CD 91일물과 국고채 1·3·5·10·20년 금리로 할인곡선을 만듭니다. 이자율스왑 금리는 공개 자료를 구하지 못해 국고채로 대신했습니다. 원/달러 환율과 미국 국채 금리도 실제 값이고, 계약 조건은 삼성전자가 맺을 법한 환헤지를 가정했습니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="deriv-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="deriv-kpis"></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>할인곡선</h3><span class="subtle">점: 시장 금리(CD·국고채), 선: 무이표 금리와 3개월 선도금리</span></div><div class="chart" id="deriv-curve"></div></div>
+        <div class="card"><div class="card-head"><h3 id="deriv-chart2-title">현금흐름</h3><span class="subtle" id="deriv-chart2-sub"></span></div><div class="chart" id="deriv-chart2"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3 id="deriv-detail-title">세부 내역</h3></div><div class="tbl-wrap" id="deriv-detail"></div></div>
+      <div class="card"><div class="card-head"><h3>검토 포인트</h3></div><ul class="notes" id="deriv-notes"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- XBRL -->
+<section class="page" data-page="xbrl" hidden>
+  <div class="page-head">
+    <p class="eyebrow">주요업무 4 · XBRL 작성 및 리뷰</p>
+    <h2>XBRL 사실값 검토</h2>
+    <p class="lead">삼성전자 2025 사업보고서 연결재무제표를 XBRL 사실값으로 옮겨 검사합니다. 실제 숫자는 계산 관계·재무제표 간 연계·작년 공시값과 모두 맞습니다. 여기에 흔한 입력 오류를 넣으면 검사 규칙이 어떻게 잡아내는지 봅니다. 표의 행을 누르면 그 사실값의 XBRL 표현이 나옵니다.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="xbrl-panel" aria-label="입력"></aside>
+    <div class="results">
+      <div class="kpis" id="xbrl-kpis"></div>
+      <div class="card"><div class="card-head"><h3>검사 결과</h3><span class="subtle">규칙 8가지: 계산 관계 · 부호 · 단위·정밀도 · 기간 맥락 · 중복 사실값 · 재무제표 간 연계 · 전기 금액 · 요소 선택</span></div><ul class="notes" id="xbrl-issues"></ul></div>
+      <div class="card"><div class="card-head"><h3>선택한 사실값</h3><span class="subtle" id="xbrl-pick-sub">표에서 행을 누르세요</span></div><div class="code" id="xbrl-xml"></div></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>재무상태표</h3><span class="subtle">백만원</span></div><div class="tbl-wrap" id="xbrl-bs"></div></div>
+        <div class="card"><div class="card-head"><h3>손익계산서 · 현금흐름표 · 이익잉여금 변동</h3><span class="subtle">백만원</span></div><div class="tbl-wrap" id="xbrl-is"></div><div class="tbl-wrap" id="xbrl-cf" style="margin-top:14px"></div><div class="tbl-wrap" id="xbrl-re" style="margin-top:14px"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 백테스트 -->
+<section class="page" data-page="bt" hidden>
+  <div class="page-head">
+    <p class="eyebrow">포트폴리오 · 비트코인 자동매매</p>
+    <h2>ver_4_4 봇 규칙 백테스트</h2>
+    <p class="lead">실거래 봇과 같은 시간 흐름으로 가상 매매합니다. 봉 마감 10초 뒤 판단 → 종가에 지정가 → 다음 봉 안에 체결되지 않으면 취소 → 반대 신호나 기간 만료 때 다음 봉 시가에 청산.</p>
+  </div>
+  <div class="work">
+    <aside class="panel" id="bt-panel" aria-label="입력"><p class="loading">시세와 모델 확률을 불러오는 중입니다…</p></aside>
+    <div class="results">
+      <div class="card" id="bt-info"></div>
+      <div class="kpis" id="bt-kpis"></div>
+      <div class="card" id="bt-verdict-card" hidden><div class="card-head"><h3>봉인 판정 기준 · 중간 집계</h3><span class="subtle">판정은 주 구간이 끝난 2027-04-23 00:00 이후 한 번만 합니다</span></div><ul class="notes" id="bt-verdict"></ul></div>
+      <div class="card"><div class="card-head"><h3>자산 변화</h3><span class="subtle">거래가 끝날 때마다 계좌가 바뀝니다</span></div><div class="chart short" id="bt-equity"></div></div>
+      <div class="card"><div class="card-head"><h3>가격과 매매</h3><span class="subtle">아래 막대로 기간 확대. 회색 점은 체결되지 않은 신호</span></div><div class="chart tall" id="bt-price"></div></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><h3>매매 일지</h3></div><div class="tbl-wrap" id="bt-trades"></div></div>
+        <div class="card"><div class="card-head"><h3>월별 · 청산 사유</h3></div><div class="tbl-wrap" id="bt-monthly"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><h3>이 화면은 어떻게 계산하나요</h3></div><ul class="notes" id="bt-how"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 검증 -->
+<section class="page" data-page="verify" hidden>
+  <div class="page-head">
+    <p class="eyebrow">검증 기록</p>
+    <h2>계산을 어떻게 확인했나</h2>
+    <p class="lead">화면의 모든 계산을 파이썬으로 따로 구현해 같은 입력에서 같은 값이 나오는지 대조했습니다. 헐 교재 예제, 블랙-숄즈 닫힌 해, 항등식으로도 확인했고, 자동매매 백테스트는 파이썬 대시보드 엔진과 거래 단위로 맞췄습니다.</p>
+  </div>
+  <div class="kpis" id="verify-kpis"></div>
+  <div class="results" id="verify-groups" style="margin-top:18px"></div>
+  <div class="card" style="margin-top:18px"><div class="card-head"><h3>이 브라우저에서 다시 돌리기</h3><span class="subtle">파이썬 없이 이 화면의 계산 모듈만으로 다시 확인합니다</span></div>
+    <button class="btn" id="verify-run">지금 검사</button><ul class="notes" id="verify-live" style="margin-top:12px"></ul></div>
+</section>
+
+<footer class="foot">
+  <span>김태하</span><span class="mono">rlaxogk62@gmail.com</span><span>삼성전자 공시·한국은행·미국 재무부·네이버 금융 자료. 계약 조건과 미래 추정은 가정입니다.</span><span id="foot-build"></span>
+</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="calc.js"></script>
+<script src="backtest.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

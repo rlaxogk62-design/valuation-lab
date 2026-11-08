@@ -1,0 +1,1461 @@
+{
+ "company": "삼성전자 (연결)",
+ "unitLabel": "백만원",
+ "years": [
+  "2025",
+  "2024"
+ ],
+ "entityPrefix": "entity00126380",
+ "elements": [
+  [
+   "ifrs-full_CashAndCashEquivalents",
+   "현금및현금성자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_ShorttermDepositsNotClassifiedAsCashEquivalents",
+   "단기금융상품",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentFinancialAssetsAtAmortisedCost",
+   "단기상각후원가금융자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+   "단기당기손익-공정가치금융자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentTradeReceivables",
+   "매출채권",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherCurrentReceivables",
+   "미수금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentPrepaidExpenses",
+   "선급비용",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_Inventories",
+   "재고자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherCurrentAssets",
+   "기타유동자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSale",
+   "매각예정분류자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentAssets",
+   "유동자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncome",
+   "기타포괄손익-공정가치금융자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+   "당기손익-공정가치금융자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_InvestmentAccountedForUsingEquityMethod",
+   "관계기업 및 공동기업 투자",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_PropertyPlantAndEquipment",
+   "유형자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_IntangibleAssetsAndGoodwill",
+   "무형자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NetDefinedBenefitAsset",
+   "순확정급여자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_DeferredTaxAssets",
+   "이연법인세자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherNoncurrentAssets",
+   "기타비유동자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentAssets",
+   "비유동자산",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_Assets",
+   "자산총계",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_TradeAndOtherCurrentPayablesToTradeSuppliers",
+   "매입채무",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_ShorttermBorrowings",
+   "단기차입금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherCurrentPayables",
+   "미지급금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentAdvances",
+   "선수금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "dart_ShortTermWithholdings",
+   "예수금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_AccrualsClassifiedAsCurrent",
+   "미지급비용",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentTaxLiabilitiesCurrent",
+   "당기법인세부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentPortionOfLongtermBorrowings",
+   "유동성장기부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentProvisions",
+   "충당부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherCurrentLiabilities",
+   "기타유동부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_LiabilitiesIncludedInDisposalGroupsClassifiedAsHeldForSale",
+   "매각예정분류부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_CurrentLiabilities",
+   "유동부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_BondsIssued",
+   "사채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_LongtermBorrowings",
+   "장기차입금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherNoncurrentPayables",
+   "장기미지급금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NetDefinedBenefitLiability",
+   "순확정급여부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_DeferredTaxLiabilities",
+   "이연법인세부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentProvisions",
+   "장기충당부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_OtherNoncurrentLiabilities",
+   "기타비유동부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_NoncurrentLiabilities",
+   "비유동부채",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_Liabilities",
+   "부채총계",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "dart_IssuedCapitalOfPreferredStock",
+   "우선주자본금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "dart_IssuedCapitalOfCommonStock",
+   "보통주자본금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_IssuedCapital",
+   "자본금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_SharePremium",
+   "주식발행초과금",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_RetainedEarnings",
+   "이익잉여금",
+   "BS",
+   "instant",
+   false
+  ],
+  [
+   "dart_ElementsOfOtherStockholdersEquity",
+   "기타자본항목",
+   "BS",
+   "instant",
+   false
+  ],
+  [
+   "ifrs-full_EquityAttributableToOwnersOfParent",
+   "지배기업 소유주지분",
+   "BS",
+   "instant",
+   false
+  ],
+  [
+   "ifrs-full_NoncontrollingInterests",
+   "비지배지분",
+   "BS",
+   "instant",
+   false
+  ],
+  [
+   "ifrs-full_Equity",
+   "자본총계",
+   "BS",
+   "instant",
+   false
+  ],
+  [
+   "ifrs-full_EquityAndLiabilities",
+   "부채와자본총계",
+   "BS",
+   "instant",
+   true
+  ],
+  [
+   "ifrs-full_Revenue",
+   "매출액",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_CostOfSales",
+   "매출원가",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_GrossProfit",
+   "매출총이익",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_SellingGeneralAndAdministrativeExpense",
+   "판매비와관리비",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "dart_OperatingIncomeLoss",
+   "영업이익",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_OtherIncome",
+   "기타수익",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_OtherExpenseByFunction",
+   "기타비용",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod",
+   "지분법이익",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_FinanceIncome",
+   "금융수익",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_FinanceCosts",
+   "금융비용",
+   "IS",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_ProfitLossBeforeTax",
+   "법인세비용차감전순이익",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_IncomeTaxExpenseContinuingOperations",
+   "법인세비용(수익)",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_ProfitLoss",
+   "당기순이익",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+   "지배기업 소유주지분",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_ProfitLossAttributableToNoncontrollingInterests",
+   "비지배지분",
+   "IS",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_CashFlowsFromUsedInOperatingActivities",
+   "영업활동현금흐름",
+   "CF",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+   "유형자산의 취득",
+   "CF",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_CashFlowsFromUsedInInvestingActivities",
+   "투자활동현금흐름",
+   "CF",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_DividendsPaidClassifiedAsFinancingActivities",
+   "배당금의 지급",
+   "CF",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_PaymentsToAcquireOrRedeemEntitysShares",
+   "자기주식의 취득",
+   "CF",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_CashFlowsFromUsedInFinancingActivities",
+   "재무활동현금흐름",
+   "CF",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_EffectOfExchangeRateChangesOnCashAndCashEquivalents",
+   "외화환산으로 인한 현금의 변동",
+   "CF",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents",
+   "현금및현금성자산의 증가(감소)",
+   "CF",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_DividendsRecognisedAsDistributionsToOwnersOfParent",
+   "배당",
+   "RE",
+   "duration",
+   true
+  ],
+  [
+   "ifrs-full_IncreaseDecreaseThroughTreasuryShareTransactions",
+   "자기주식의 소각",
+   "RE",
+   "duration",
+   false
+  ],
+  [
+   "ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity",
+   "기타포괄손익 대체",
+   "RE",
+   "duration",
+   false
+  ]
+ ],
+ "values": {
+  "ifrs-full_CashAndCashEquivalents": [
+   57856378.0,
+   53705579.0
+  ],
+  "ifrs-full_ShorttermDepositsNotClassifiedAsCashEquivalents": [
+   67965021.0,
+   58909334.0
+  ],
+  "ifrs-full_CurrentFinancialAssetsAtAmortisedCost": [
+   0.0,
+   0.0
+  ],
+  "ifrs-full_CurrentFinancialAssetsAtFairValueThroughProfitOrLoss": [
+   25715.0,
+   36877.0
+  ],
+  "ifrs-full_CurrentTradeReceivables": [
+   51127642.0,
+   43623073.0
+  ],
+  "ifrs-full_OtherCurrentReceivables": [
+   7481327.0,
+   9622974.0
+  ],
+  "ifrs-full_CurrentPrepaidExpenses": [
+   3627172.0,
+   3362824.0
+  ],
+  "ifrs-full_Inventories": [
+   52636828.0,
+   51754865.0
+  ],
+  "ifrs-full_OtherCurrentAssets": [
+   6964529.0,
+   6046740.0
+  ],
+  "ifrs-full_NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSale": [
+   0.0,
+   0.0
+  ],
+  "ifrs-full_CurrentAssets": [
+   247684612.0,
+   227062266.0
+  ],
+  "ifrs-full_NoncurrentFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncome": [
+   16295005.0,
+   10580932.0
+  ],
+  "ifrs-full_NoncurrentFinancialAssetsAtFairValueThroughProfitOrLoss": [
+   1280501.0,
+   1175749.0
+  ],
+  "ifrs-full_InvestmentAccountedForUsingEquityMethod": [
+   13772121.0,
+   12592117.0
+  ],
+  "ifrs-full_PropertyPlantAndEquipment": [
+   215304784.0,
+   205945209.0
+  ],
+  "ifrs-full_IntangibleAssetsAndGoodwill": [
+   29480565.0,
+   23738566.0
+  ],
+  "ifrs-full_NetDefinedBenefitAsset": [
+   4271547.0,
+   3089571.0
+  ],
+  "ifrs-full_DeferredTaxAssets": [
+   18840559.0,
+   14236468.0
+  ],
+  "ifrs-full_OtherNoncurrentAssets": [
+   20012416.0,
+   16111070.0
+  ],
+  "ifrs-full_NoncurrentAssets": [
+   319257498.0,
+   287469682.0
+  ],
+  "ifrs-full_Assets": [
+   566942110.0,
+   514531948.0
+  ],
+  "ifrs-full_TradeAndOtherCurrentPayablesToTradeSuppliers": [
+   13039380.0,
+   12370177.0
+  ],
+  "ifrs-full_ShorttermBorrowings": [
+   17574980.0,
+   13172504.0
+  ],
+  "ifrs-full_OtherCurrentPayables": [
+   21365657.0,
+   18547365.0
+  ],
+  "ifrs-full_CurrentAdvances": [
+   1933598.0,
+   1841420.0
+  ],
+  "dart_ShortTermWithholdings": [
+   1001885.0,
+   991812.0
+  ],
+  "ifrs-full_AccrualsClassifiedAsCurrent": [
+   32707431.0,
+   29613258.0
+  ],
+  "ifrs-full_CurrentTaxLiabilitiesCurrent": [
+   7037174.0,
+   4340171.0
+  ],
+  "ifrs-full_CurrentPortionOfLongtermBorrowings": [
+   1177508.0,
+   2207290.0
+  ],
+  "ifrs-full_CurrentProvisions": [
+   7690559.0,
+   8216469.0
+  ],
+  "ifrs-full_OtherCurrentLiabilities": [
+   2883176.0,
+   2025833.0
+  ],
+  "ifrs-full_LiabilitiesIncludedInDisposalGroupsClassifiedAsHeldForSale": [
+   0.0,
+   0.0
+  ],
+  "ifrs-full_CurrentLiabilities": [
+   106411348.0,
+   93326299.0
+  ],
+  "ifrs-full_BondsIssued": [
+   7134.0,
+   14530.0
+  ],
+  "ifrs-full_LongtermBorrowings": [
+   6479517.0,
+   3935860.0
+  ],
+  "ifrs-full_OtherNoncurrentPayables": [
+   5602031.0,
+   5510455.0
+  ],
+  "ifrs-full_NetDefinedBenefitLiability": [
+   558520.0,
+   521410.0
+  ],
+  "ifrs-full_DeferredTaxLiabilities": [
+   709226.0,
+   528231.0
+  ],
+  "ifrs-full_NoncurrentProvisions": [
+   2900411.0,
+   3120044.0
+  ],
+  "ifrs-full_OtherNoncurrentLiabilities": [
+   7953586.0,
+   5383049.0
+  ],
+  "ifrs-full_NoncurrentLiabilities": [
+   24210425.0,
+   19013579.0
+  ],
+  "ifrs-full_Liabilities": [
+   130621773.0,
+   112339878.0
+  ],
+  "dart_IssuedCapitalOfPreferredStock": [
+   119467.0,
+   119467.0
+  ],
+  "dart_IssuedCapitalOfCommonStock": [
+   778047.0,
+   778047.0
+  ],
+  "ifrs-full_IssuedCapital": [
+   897514.0,
+   897514.0
+  ],
+  "ifrs-full_SharePremium": [
+   4403893.0,
+   4403893.0
+  ],
+  "ifrs-full_RetainedEarnings": [
+   402135600.0,
+   370513188.0
+  ],
+  "dart_ElementsOfOtherStockholdersEquity": [
+   16876248.0,
+   15873008.0
+  ],
+  "ifrs-full_EquityAttributableToOwnersOfParent": [
+   424313255.0,
+   391687603.0
+  ],
+  "ifrs-full_NoncontrollingInterests": [
+   12007082.0,
+   10504467.0
+  ],
+  "ifrs-full_Equity": [
+   436320337.0,
+   402192070.0
+  ],
+  "ifrs-full_EquityAndLiabilities": [
+   566942110.0,
+   514531948.0
+  ],
+  "ifrs-full_Revenue": [
+   333605938.0,
+   300870903.0
+  ],
+  "ifrs-full_CostOfSales": [
+   202235513.0,
+   186562268.0
+  ],
+  "ifrs-full_GrossProfit": [
+   131370425.0,
+   114308635.0
+  ],
+  "ifrs-full_SellingGeneralAndAdministrativeExpense": [
+   87769374.0,
+   81582674.0
+  ],
+  "dart_OperatingIncomeLoss": [
+   43601051.0,
+   32725961.0
+  ],
+  "ifrs-full_OtherIncome": [
+   2267083.0,
+   1960338.0
+  ],
+  "ifrs-full_OtherExpenseByFunction": [
+   1575901.0,
+   1625229.0
+  ],
+  "ifrs-full_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod": [
+   682700.0,
+   751044.0
+  ],
+  "ifrs-full_FinanceIncome": [
+   16240302.0,
+   16703304.0
+  ],
+  "ifrs-full_FinanceCosts": [
+   11733764.0,
+   12985684.0
+  ],
+  "ifrs-full_ProfitLossBeforeTax": [
+   49481471.0,
+   37529734.0
+  ],
+  "ifrs-full_IncomeTaxExpenseContinuingOperations": [
+   4274666.0,
+   3078383.0
+  ],
+  "ifrs-full_ProfitLoss": [
+   45206805.0,
+   34451351.0
+  ],
+  "ifrs-full_ProfitLossAttributableToOwnersOfParent": [
+   44260956.0,
+   33621363.0
+  ],
+  "ifrs-full_ProfitLossAttributableToNoncontrollingInterests": [
+   945849.0,
+   829988.0
+  ],
+  "ifrs-full_CashFlowsFromUsedInOperatingActivities": [
+   85315148.0,
+   72982621.0
+  ],
+  "ifrs-full_PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities": [
+   47522179.0,
+   51406355.0
+  ],
+  "ifrs-full_CashFlowsFromUsedInInvestingActivities": [
+   -68512206.0,
+   -85381702.0
+  ],
+  "ifrs-full_DividendsPaidClassifiedAsFinancingActivities": [
+   9897183.0,
+   10888749.0
+  ],
+  "ifrs-full_PaymentsToAcquireOrRedeemEntitysShares": [
+   8189263.0,
+   1811775.0
+  ],
+  "ifrs-full_CashFlowsFromUsedInFinancingActivities": [
+   -13478040.0,
+   -7797243.0
+  ],
+  "ifrs-full_EffectOfExchangeRateChangesOnCashAndCashEquivalents": [
+   825897.0,
+   4821010.0
+  ],
+  "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents": [
+   4150799.0,
+   -15375314.0
+  ],
+  "ifrs-full_DividendsRecognisedAsDistributionsToOwnersOfParent": [
+   9808728.0,
+   null
+  ],
+  "ifrs-full_IncreaseDecreaseThroughTreasuryShareTransactions": [
+   -3049041.0,
+   null
+  ],
+  "ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity": [
+   219225.0,
+   null
+  ]
+ },
+ "filedPrior": {
+  "ifrs-full_Revenue": 300870903,
+  "ifrs-full_CostOfSales": 186562268,
+  "ifrs-full_ProfitLoss": 34451351,
+  "ifrs-full_Assets": 514531948,
+  "ifrs-full_Equity": 402192070,
+  "ifrs-full_RetainedEarnings": 370513188,
+  "ifrs-full_CashAndCashEquivalents": 53705579
+ },
+ "calc": [
+  [
+   "ifrs-full_CurrentAssets",
+   [
+    [
+     "ifrs-full_CashAndCashEquivalents",
+     1
+    ],
+    [
+     "ifrs-full_ShorttermDepositsNotClassifiedAsCashEquivalents",
+     1
+    ],
+    [
+     "ifrs-full_CurrentFinancialAssetsAtAmortisedCost",
+     1
+    ],
+    [
+     "ifrs-full_CurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+     1
+    ],
+    [
+     "ifrs-full_CurrentTradeReceivables",
+     1
+    ],
+    [
+     "ifrs-full_OtherCurrentReceivables",
+     1
+    ],
+    [
+     "ifrs-full_CurrentPrepaidExpenses",
+     1
+    ],
+    [
+     "ifrs-full_Inventories",
+     1
+    ],
+    [
+     "ifrs-full_OtherCurrentAssets",
+     1
+    ],
+    [
+     "ifrs-full_NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSale",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_NoncurrentAssets",
+   [
+    [
+     "ifrs-full_NoncurrentFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncome",
+     1
+    ],
+    [
+     "ifrs-full_NoncurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+     1
+    ],
+    [
+     "ifrs-full_InvestmentAccountedForUsingEquityMethod",
+     1
+    ],
+    [
+     "ifrs-full_PropertyPlantAndEquipment",
+     1
+    ],
+    [
+     "ifrs-full_IntangibleAssetsAndGoodwill",
+     1
+    ],
+    [
+     "ifrs-full_NetDefinedBenefitAsset",
+     1
+    ],
+    [
+     "ifrs-full_DeferredTaxAssets",
+     1
+    ],
+    [
+     "ifrs-full_OtherNoncurrentAssets",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_Assets",
+   [
+    [
+     "ifrs-full_CurrentAssets",
+     1
+    ],
+    [
+     "ifrs-full_NoncurrentAssets",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_CurrentLiabilities",
+   [
+    [
+     "ifrs-full_TradeAndOtherCurrentPayablesToTradeSuppliers",
+     1
+    ],
+    [
+     "ifrs-full_ShorttermBorrowings",
+     1
+    ],
+    [
+     "ifrs-full_OtherCurrentPayables",
+     1
+    ],
+    [
+     "ifrs-full_CurrentAdvances",
+     1
+    ],
+    [
+     "dart_ShortTermWithholdings",
+     1
+    ],
+    [
+     "ifrs-full_AccrualsClassifiedAsCurrent",
+     1
+    ],
+    [
+     "ifrs-full_CurrentTaxLiabilitiesCurrent",
+     1
+    ],
+    [
+     "ifrs-full_CurrentPortionOfLongtermBorrowings",
+     1
+    ],
+    [
+     "ifrs-full_CurrentProvisions",
+     1
+    ],
+    [
+     "ifrs-full_OtherCurrentLiabilities",
+     1
+    ],
+    [
+     "ifrs-full_LiabilitiesIncludedInDisposalGroupsClassifiedAsHeldForSale",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_NoncurrentLiabilities",
+   [
+    [
+     "ifrs-full_BondsIssued",
+     1
+    ],
+    [
+     "ifrs-full_LongtermBorrowings",
+     1
+    ],
+    [
+     "ifrs-full_OtherNoncurrentPayables",
+     1
+    ],
+    [
+     "ifrs-full_NetDefinedBenefitLiability",
+     1
+    ],
+    [
+     "ifrs-full_DeferredTaxLiabilities",
+     1
+    ],
+    [
+     "ifrs-full_NoncurrentProvisions",
+     1
+    ],
+    [
+     "ifrs-full_OtherNoncurrentLiabilities",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_Liabilities",
+   [
+    [
+     "ifrs-full_CurrentLiabilities",
+     1
+    ],
+    [
+     "ifrs-full_NoncurrentLiabilities",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_IssuedCapital",
+   [
+    [
+     "dart_IssuedCapitalOfPreferredStock",
+     1
+    ],
+    [
+     "dart_IssuedCapitalOfCommonStock",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_EquityAttributableToOwnersOfParent",
+   [
+    [
+     "ifrs-full_IssuedCapital",
+     1
+    ],
+    [
+     "ifrs-full_SharePremium",
+     1
+    ],
+    [
+     "ifrs-full_RetainedEarnings",
+     1
+    ],
+    [
+     "dart_ElementsOfOtherStockholdersEquity",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_Equity",
+   [
+    [
+     "ifrs-full_EquityAttributableToOwnersOfParent",
+     1
+    ],
+    [
+     "ifrs-full_NoncontrollingInterests",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_EquityAndLiabilities",
+   [
+    [
+     "ifrs-full_Liabilities",
+     1
+    ],
+    [
+     "ifrs-full_Equity",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_GrossProfit",
+   [
+    [
+     "ifrs-full_Revenue",
+     1
+    ],
+    [
+     "ifrs-full_CostOfSales",
+     -1
+    ]
+   ]
+  ],
+  [
+   "dart_OperatingIncomeLoss",
+   [
+    [
+     "ifrs-full_GrossProfit",
+     1
+    ],
+    [
+     "ifrs-full_SellingGeneralAndAdministrativeExpense",
+     -1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_ProfitLossBeforeTax",
+   [
+    [
+     "dart_OperatingIncomeLoss",
+     1
+    ],
+    [
+     "ifrs-full_OtherIncome",
+     1
+    ],
+    [
+     "ifrs-full_OtherExpenseByFunction",
+     -1
+    ],
+    [
+     "ifrs-full_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod",
+     1
+    ],
+    [
+     "ifrs-full_FinanceIncome",
+     1
+    ],
+    [
+     "ifrs-full_FinanceCosts",
+     -1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_ProfitLoss",
+   [
+    [
+     "ifrs-full_ProfitLossBeforeTax",
+     1
+    ],
+    [
+     "ifrs-full_IncomeTaxExpenseContinuingOperations",
+     -1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_ProfitLoss",
+   [
+    [
+     "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+     1
+    ],
+    [
+     "ifrs-full_ProfitLossAttributableToNoncontrollingInterests",
+     1
+    ]
+   ]
+  ],
+  [
+   "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents",
+   [
+    [
+     "ifrs-full_CashFlowsFromUsedInOperatingActivities",
+     1
+    ],
+    [
+     "ifrs-full_CashFlowsFromUsedInInvestingActivities",
+     1
+    ],
+    [
+     "ifrs-full_CashFlowsFromUsedInFinancingActivities",
+     1
+    ],
+    [
+     "ifrs-full_EffectOfExchangeRateChangesOnCashAndCashEquivalents",
+     1
+    ]
+   ]
+  ]
+ ],
+ "reRoll": {
+  "end": "ifrs-full_RetainedEarnings",
+  "terms": [
+   [
+    "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+    1
+   ],
+   [
+    "ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity",
+    1
+   ],
+   [
+    "ifrs-full_DividendsRecognisedAsDistributionsToOwnersOfParent",
+    -1
+   ],
+   [
+    "ifrs-full_IncreaseDecreaseThroughTreasuryShareTransactions",
+    1
+   ]
+  ]
+ },
+ "cashRoll": [
+  "ifrs-full_CashAndCashEquivalents",
+  "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents"
+ ],
+ "standardFor": {
+  "entity00126380_TradeReceivables": "ifrs-full_CurrentTradeReceivables"
+ },
+ "views": {
+  "BS": [
+   "ifrs-full_CashAndCashEquivalents",
+   "ifrs-full_ShorttermDepositsNotClassifiedAsCashEquivalents",
+   "ifrs-full_CurrentFinancialAssetsAtAmortisedCost",
+   "ifrs-full_CurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+   "ifrs-full_CurrentTradeReceivables",
+   "ifrs-full_OtherCurrentReceivables",
+   "ifrs-full_CurrentPrepaidExpenses",
+   "ifrs-full_Inventories",
+   "ifrs-full_OtherCurrentAssets",
+   "ifrs-full_NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSale",
+   "ifrs-full_CurrentAssets",
+   "ifrs-full_NoncurrentFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncome",
+   "ifrs-full_NoncurrentFinancialAssetsAtFairValueThroughProfitOrLoss",
+   "ifrs-full_InvestmentAccountedForUsingEquityMethod",
+   "ifrs-full_PropertyPlantAndEquipment",
+   "ifrs-full_IntangibleAssetsAndGoodwill",
+   "ifrs-full_NetDefinedBenefitAsset",
+   "ifrs-full_DeferredTaxAssets",
+   "ifrs-full_OtherNoncurrentAssets",
+   "ifrs-full_NoncurrentAssets",
+   "ifrs-full_Assets",
+   "ifrs-full_TradeAndOtherCurrentPayablesToTradeSuppliers",
+   "ifrs-full_ShorttermBorrowings",
+   "ifrs-full_OtherCurrentPayables",
+   "ifrs-full_CurrentAdvances",
+   "dart_ShortTermWithholdings",
+   "ifrs-full_AccrualsClassifiedAsCurrent",
+   "ifrs-full_CurrentTaxLiabilitiesCurrent",
+   "ifrs-full_CurrentPortionOfLongtermBorrowings",
+   "ifrs-full_CurrentProvisions",
+   "ifrs-full_OtherCurrentLiabilities",
+   "ifrs-full_LiabilitiesIncludedInDisposalGroupsClassifiedAsHeldForSale",
+   "ifrs-full_CurrentLiabilities",
+   "ifrs-full_BondsIssued",
+   "ifrs-full_LongtermBorrowings",
+   "ifrs-full_OtherNoncurrentPayables",
+   "ifrs-full_NetDefinedBenefitLiability",
+   "ifrs-full_DeferredTaxLiabilities",
+   "ifrs-full_NoncurrentProvisions",
+   "ifrs-full_OtherNoncurrentLiabilities",
+   "ifrs-full_NoncurrentLiabilities",
+   "ifrs-full_Liabilities",
+   "dart_IssuedCapitalOfPreferredStock",
+   "dart_IssuedCapitalOfCommonStock",
+   "ifrs-full_IssuedCapital",
+   "ifrs-full_SharePremium",
+   "ifrs-full_RetainedEarnings",
+   "dart_ElementsOfOtherStockholdersEquity",
+   "ifrs-full_EquityAttributableToOwnersOfParent",
+   "ifrs-full_NoncontrollingInterests",
+   "ifrs-full_Equity",
+   "ifrs-full_EquityAndLiabilities"
+  ],
+  "IS": [
+   "ifrs-full_Revenue",
+   "ifrs-full_CostOfSales",
+   "ifrs-full_GrossProfit",
+   "ifrs-full_SellingGeneralAndAdministrativeExpense",
+   "dart_OperatingIncomeLoss",
+   "ifrs-full_OtherIncome",
+   "ifrs-full_OtherExpenseByFunction",
+   "ifrs-full_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod",
+   "ifrs-full_FinanceIncome",
+   "ifrs-full_FinanceCosts",
+   "ifrs-full_ProfitLossBeforeTax",
+   "ifrs-full_IncomeTaxExpenseContinuingOperations",
+   "ifrs-full_ProfitLoss",
+   "ifrs-full_ProfitLossAttributableToOwnersOfParent",
+   "ifrs-full_ProfitLossAttributableToNoncontrollingInterests"
+  ],
+  "CF": [
+   "ifrs-full_ProfitLoss",
+   "ifrs-full_CashFlowsFromUsedInOperatingActivities",
+   "ifrs-full_PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+   "ifrs-full_CashFlowsFromUsedInInvestingActivities",
+   "ifrs-full_DividendsPaidClassifiedAsFinancingActivities",
+   "ifrs-full_PaymentsToAcquireOrRedeemEntitysShares",
+   "ifrs-full_CashFlowsFromUsedInFinancingActivities",
+   "ifrs-full_EffectOfExchangeRateChangesOnCashAndCashEquivalents",
+   "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents"
+  ],
+  "RE": [
+   "ifrs-full_DividendsRecognisedAsDistributionsToOwnersOfParent",
+   "ifrs-full_IncreaseDecreaseThroughTreasuryShareTransactions",
+   "ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity"
+  ]
+ },
+ "scenarios": [
+  {
+   "id": "sign",
+   "name": "부호 오류",
+   "desc": "매출원가 202,235,513을 음수로 입력",
+   "expect": [
+    "계산 관계",
+    "부호"
+   ],
+   "edit": {
+    "el": "ifrs-full_CostOfSales",
+    "period": "CY",
+    "value": -202235513
+   }
+  },
+  {
+   "id": "unit",
+   "name": "단위 착오",
+   "desc": "기타유동자산 6,964,529(백만원)를 원 단위 자리에 그대로 입력",
+   "expect": [
+    "계산 관계",
+    "단위·정밀도"
+   ],
+   "edit": {
+    "el": "ifrs-full_OtherCurrentAssets",
+    "period": "CY",
+    "raw": 6964529
+   }
+  },
+  {
+   "id": "omit",
+   "name": "합계 누락",
+   "desc": "비유동자산 합계에서 기타비유동자산 20,012,416을 빠뜨림",
+   "expect": [
+    "계산 관계"
+   ],
+   "edit": {
+    "el": "ifrs-full_NoncurrentAssets",
+    "period": "CY",
+    "value": 299245082
+   }
+  },
+  {
+   "id": "cash",
+   "name": "현금 증감 오타",
+   "desc": "현금의 증가 4,150,799를 4,510,799로 입력",
+   "expect": [
+    "계산 관계",
+    "재무제표 간 연계"
+   ],
+   "edit": {
+    "el": "ifrs-full_IncreaseDecreaseInCashAndCashEquivalents",
+    "period": "CY",
+    "value": 4510799
+   }
+  },
+  {
+   "id": "dup",
+   "name": "중복 값 불일치",
+   "desc": "현금흐름표 출발점 당기순이익을 45,206,850으로 따로 입력",
+   "expect": [
+    "중복 사실값"
+   ],
+   "dup": {
+    "el": "ifrs-full_ProfitLoss",
+    "period": "CY",
+    "value": 45206850
+   }
+  },
+  {
+   "id": "prior",
+   "name": "전기 금액 오타",
+   "desc": "비교 표시 전기 매출을 300,807,903으로 입력",
+   "expect": [
+    "계산 관계",
+    "전기 금액"
+   ],
+   "edit": {
+    "el": "ifrs-full_Revenue",
+    "period": "PY",
+    "value": 300807903
+   }
+  },
+  {
+   "id": "ext",
+   "name": "불필요한 확장 요소",
+   "desc": "매출채권을 회사 자체 요소로 태깅",
+   "expect": [
+    "요소 선택"
+   ],
+   "rename": {
+    "el": "ifrs-full_CurrentTradeReceivables",
+    "period": "CY",
+    "to": "entity00126380_TradeReceivables"
+   }
+  },
+  {
+   "id": "ctx",
+   "name": "기간 맥락 오류",
+   "desc": "재고자산(시점 항목)에 기간 맥락을 씀",
+   "expect": [
+    "기간 맥락"
+   ],
+   "ctx": {
+    "el": "ifrs-full_Inventories",
+    "period": "CY",
+    "type": "duration"
+   }
+  }
+ ]
+}
